@@ -4,7 +4,7 @@ return {
     event = "BufEnter",
     dependencies = { "williamboman/mason.nvim", "nvimtools/none-ls.nvim" },
     opts = {},
-   },
+  },
   {
     "nvimtools/none-ls.nvim",
     config = function()
