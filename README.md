@@ -3,12 +3,11 @@
 This repository contains my dotfiles. I use [GNU Stow](https://www.gnu.org/software/stow/) to manage them.
 
 ## Details
-**WM:** Hyprland
-**Terminal:** Kitty
-**Editor:** NeoVim
-
-**Font:** JetBrainsMono Nerd
-**Colorscheme:** Catppuccin Mocha
+- **WM:** Hyprland
+- **Terminal:** Kitty
+- **Editor:** NeoVim
+- **Font:** JetBrainsMono Nerd
+- **Colorscheme:** Catppuccin Mocha
 
 ## Installation
 
