@@ -2,7 +2,7 @@
 
 window#waybar {
   background-color: @base_transparent;
-  color: @lavender;
+  color: @text;
   font-family: "MartianMonoNerdFont";
   font-weight: bold;
 }
@@ -16,7 +16,7 @@ window#waybar {
 
 tooltip {
   background-color: @base;
-  color: @lavender;
+  color: @text;
   font-family: "JetBrainsMono Nerd";
   font-weight: bold;
 }
@@ -73,9 +73,9 @@ tooltip {
 }
 
 #workspaces button {
-  color: @lavender;
+  color: @text;
 }
 
 #workspaces button.active {
-  color: @sapphire;
+  color: @blue;
 }
