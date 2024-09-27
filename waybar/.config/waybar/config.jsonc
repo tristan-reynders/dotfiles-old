@@ -1,0 +1,79 @@
+{
+    // General settings
+    "position": "top",
+    "layer": "top",
+    "height": 34,
+    "reload_style_on_change": true,
+
+    // Module location
+    "modules-left": [
+      "hyprland/workspaces"
+    ],
+
+    "modules-center": [
+      "hyprland/window",
+    ],
+    
+    "modules-right": [
+      "network",
+      "pulseaudio",
+      "battery",
+      "clock",
+    ],
+
+    // Module configuration
+    "hyprland/workspaces": {
+	    "format": "{icon}",
+	    "format-icons": {
+		    "1": "",
+		    "2": "",
+		    "3": "󰈹",
+		    "4": "",
+		    "5": "",
+	    },
+	    "persistent-workspaces": { "*": 5 }
+    }, 
+
+    "hyprland/window": {
+	    "format": "{}",
+      "max-length": 50
+    },
+
+    "network": {
+	    "interface": "wlan0",
+	    "format": "{icon}",
+	    "format-disconnected": "󰤭",
+      "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
+	    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+	    "tooltip-format-disconnected": "Disconnected"
+    },
+
+    "pulseaudio": {
+	    "format": "{icon}",
+      "format-tooltip": "{volume}%",
+	    "format-muted": "",
+	    "format-icons": [""]
+    },
+  
+    "battery": {
+	    "bat": "BAT0",
+      "interval": 60,
+	    "states": {
+        "good": 100,
+        "moderate": 60,
+		    "warning": 30,
+		    "critical": 15
+	    },
+	    "format": "{icon}",
+      "format-plugged": "",
+      "format-charging": "",
+      "tooltip-format": "{capacity}% | {time}",
+	    "format-icons": ["", "", "", "", ""]
+    },
+
+    "clock": {
+	    "tooltip-format": "{:%A, %B %d, %Y}",
+    },
+
+    "custom/spacer": { "format": " " }
+}
