@@ -59,7 +59,7 @@ tooltip {
 #network {
   font-size: 20px;
   padding-right: 15px;
-  color: @teal;
+  color: @blue;
 }
 
 #pulseaudio {
