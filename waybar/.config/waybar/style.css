@@ -70,10 +70,13 @@ tooltip {
 
 #workspaces {
   font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
 }
 
 #workspaces button {
   color: @text;
+  padding: 3px;
 }
 
 #workspaces button.active {
