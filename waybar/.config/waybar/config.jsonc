@@ -1,6 +1,6 @@
 {
     // General settings
-    "position": "top",
+    "position": "bottom",
     "layer": "top",
     "height": 34,
     "reload_style_on_change": true,
