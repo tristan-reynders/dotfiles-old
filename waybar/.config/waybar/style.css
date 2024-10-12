@@ -1,85 +1,129 @@
-@import 'mocha.css';
+* {
+    font-family: "JetBrains Mono Nerd Font";
+    font-weight: bold; 
+}
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0);
-  color: @text;
-  font-family: "MartianMonoNerdFont";
-  font-weight: bold;
-  padding-top: 5px;
+    background: rgba(0, 0, 0, 0.4); 
+    border-radius: 5px;
 }
 
-.modules-left,
-.modules-center,
-.modules-right {
-  padding-left: 3px;
-  padding-right: 3px;
-}
 
 tooltip {
-  background-color: @base;
-  color: @text;
-  font-family: "JetBrainsMono Nerd";
-  font-weight: bold;
+    background: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
 }
 
-#custom-spacer {
-  margin-left: 0px;
-}
-
-#clock {
-  font-size: 16px;
-  font-weight: bold;
-  padding-right: 15px;
-}
-
-#battery {
-  font-size: 18px;
-  padding-right: 30px;
-}
-
-#battery.charging {
-  font-size: 17px;
-}
-
-#battery.good {
-  color: @green;
-}
-
-#battery.moderate {
-  color: @yellow;
-}
-
-#battery.warning {
-  color: @peach;
-}
-
-#battery.critical {
-  color: @red;
-}
-
-#network {
-  font-size: 20px;
-  padding-right: 15px;
-  color: @blue;
-}
-
-#pulseaudio {
-  font-size: 16px;
-  padding-right: 19px;
-  color: @blue;
+#window {
+    font-size: 16px;
+    padding-top: 5px;
 }
 
 #workspaces {
-  font-size: 18px;
-  font-weight: bold;
-  margin-left: 10px;
+    padding-left: 4px;
 }
+
 
 #workspaces button {
-  color: @text;
-  padding: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
-#workspaces button.active {
-  color: @blue;
+#backlight {
+    color: #2096C0;
+    background: rgba(23, 23, 23, 0.0);
+    font-weight: normal;
+    font-size: 20px;
+    padding-left: 0px;
+    padding-right: 4px;
+ 
+}
+
+#battery {
+    font-weight: normal;
+    font-size: 20px;
+    color: #a6d189;
+    padding-top: 2px;
+    padding-right: 15px;
+ 
+}
+
+#clock {
+    color: #A1BDCE;
+    font-size: 16px;
+    font-weight: 900;
+    font-family: "JetBrains Mono Nerd Font";
+    background: rgba(23, 23, 23, 0.0);
+    opacity: 1;
+    margin: 6px 0px 0px 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    
+}
+
+#pulseaudio {
+    font-weight: normal;
+    font-size: 18px;
+    color: #6F8FDB;
+    background:  rgba(22, 19, 32, 0.0);
+    opacity: 1;
+    margin: 1px 0px 0px 0px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#cpu {
+    font-weight: bold;
+    font-size: 22px;
+    color: #915CAF;
+}
+
+#memory {
+    font-weight: bolder;
+    font-size: 22px;
+    color: #E4C9AF;
+}
+
+#network{
+    color: #A1BDCE;
+    font-weight: normal;
+    font-size: 19px;
+    margin: 1px 0px 0px 0px;
+    padding-right: 3px;
+    padding-left: 4px
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+    background: #A1BDCE;
+    background-color: transparent;
+    box-shadow: none;
+    margin-right: 7px;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    margin-top: -3px;
+    min-width: 90px;
+    min-height: 10px;
+    margin-bottom: -4px;
+    border-radius: 8px;
+    background: #343434;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    border-radius: 8px;
+    background-color: #2096C0;
+}
+
+#battery.charging, #battery.plugged {
+	color: #E8EDF0;
+}
+
+
+#battery.critical:not(.charging) {
+    color: rgb(197, 87, 87);
 }

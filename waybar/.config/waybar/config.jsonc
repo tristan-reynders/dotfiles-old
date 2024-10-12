@@ -1,79 +1,149 @@
 {
-    // General settings
-    "position": "top",
+    // SETTINGS
     "layer": "top",
-    "height": 30,
+    "position": "top",
+    "mod": "dock",
+    "margin-left": 10,
+    "margin-right": 10,
+    "margin-top": 7,
+    "margin-bottom": 0,
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
     "reload_style_on_change": true,
 
-    // Module location
-    "modules-left": [
-      "hyprland/workspaces"
-    ],
-
-    "modules-center": [
-      "hyprland/window",
-    ],
+    // MODULES
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["network","group/pulseaudio","group/backlight","battery","memory","cpu","clock"],
     
-    "modules-right": [
-      "network",
-      "pulseaudio",
-      "battery",
-      "clock",
-    ],
-
-    // Module configuration
+    // MODULE CONFIGURATION
     "hyprland/workspaces": {
-	    "format": "{icon}",
-	    "format-icons": {
-		    "1": "1",
-		    "2": "2",
-		    "3": "3",
-		    "4": "4",
-		    "5": "5",
-	    },
-	    "persistent-workspaces": { "*": 5 }
-    }, 
+        "format": "{icon}",
+        "format-icons": {
+        "default": "",
+        "active": ""
+        }
+    },
 
-    "hyprland/window": {
-	    "format": "{}",
-      "max-length": 50
+    "hyprland/window": {  
+        "format": "<span  weight='bold' >{class}</span>",
+        "max-length": 120,
+        "icon": false,
+        "icon-size": 13
     },
 
     "network": {
-	    "interface": "wlan0",
-	    "format": "{icon}",
-	    "format-disconnected": "󰤭",
-      "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
-	    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-	    "tooltip-format-disconnected": "Disconnected"
+        "tooltip": true,
+        "format-wifi": "{icon} ",
+        "format-icons": ["󰤟", "󰤢", "󰤥"],
+        "rotate": 0,
+        "format-ethernet": "󰈀 ",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": " ",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "/usr/local/bin/ags -t ControlPanel",
+        "interval": 2
+    },
+       
+    "group/pulseaudio": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 600,
+            "children-class": "not-power",
+        "transition-to-left": true,
+            "click-to-reveal": true
+        },
+        "modules": ["pulseaudio","pulseaudio/slider"]
+    },
+    
+    "pulseaudio": {
+        "format": "{icon}",
+        "rotate": 0,
+        "format-muted": "婢",
+        "tooltip-format": "{icon} {desc} // {volume}%",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
     },
 
-    "pulseaudio": {
-	    "format": "{icon}",
-      "format-tooltip": "{volume}%",
-	    "format-muted": "",
-	    "format-icons": [""]
+    "pulseaudio/slider": {
+        "min": 5,
+        "max": 100,
+        "rotate": 0,
+        "device": "pulseaudio",
+        "scroll-step": 1
     },
-  
+
+    "group/backlight": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 600,
+            "children-class": "not-power",
+        "transition-to-left": true,
+            "click-to-reveal": true
+        },
+        "modules": ["backlight","backlight/slider"]
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "rotate": 0,
+        "format": "{icon}",
+        "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
+        "scroll-step": 1,
+        "min-length": 2
+    },
+
+    "backlight/slider": {
+        "min": 5,
+        "max": 100,
+        "rotate": 0,
+        "device": "amdgpu_bl2",
+        "scroll-step": 1
+      },
+
     "battery": {
 	    "bat": "BAT0",
-      "interval": 60,
+        "interval": 10,
 	    "states": {
-        "good": 100,
-        "moderate": 60,
+            "good": 100,
+            "moderate": 50,
 		    "warning": 30,
 		    "critical": 15
 	    },
 	    "format": "{icon}",
-      "format-plugged": "",
-      "format-charging": "",
-      "tooltip-format": "{capacity}% | {time}",
-	    "format-icons": ["", "", "", "", ""]
+        "tooltip-format": "{capacity}% | {time}",
+	    "format-icons": ["", "", "", ""]
     },
 
+    "memory": {
+        "interval": 10,
+        "rotate": 270,
+        "format": "{icon}",
+        "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
+        "max-length": 10
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": "{icon}",
+        "rotate": 270,
+        "format-icons": ["󰝦","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"]
+    },
+    
     "clock": {
-	    "tooltip-format": "{:%A, %B %d, %Y}",
-    },
-
-    "custom/spacer": { "format": " " }
+        "format": "{:%I:%M %p}",
+        "rotate": 0,
+        "on-click-right": "pkill waybar & hyprctl dispatch exec waybar",
+        "tooltip-format": "{:%A, %B %d, %Y (%R)}"
+    }
 }
