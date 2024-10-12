@@ -36,7 +36,7 @@ tooltip {
     font-weight: normal;
     font-size: 20px;
     padding-left: 0px;
-    padding-right: 4px;
+    padding-right: 6px;
  
 }
 
@@ -70,8 +70,8 @@ tooltip {
     background:  rgba(22, 19, 32, 0.0);
     opacity: 1;
     margin: 1px 0px 0px 0px;
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: 0px;
+    padding-right: 6px;
 }
 
 #cpu {
@@ -91,8 +91,9 @@ tooltip {
     font-weight: normal;
     font-size: 19px;
     margin: 1px 0px 0px 0px;
-    padding-right: 3px;
-    padding-left: 4px
+    padding-right: 10px;
+    padding-left: 0px
+
 }
 
 #backlight-slider slider,
